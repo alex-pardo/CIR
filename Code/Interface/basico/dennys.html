@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='keywords' content='WebRTC, HTML5, JavaScript' />
+  <meta name='description' content='WebRTC Reference App' />
+  <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'>
+
+  <base target='_blank'>
+
+  <title>Operador</title>
+
+  <link rel='stylesheet'  type="text/css" href='css/mainDennys.css' />
+
+</head>
+<body>
+  <div id='container'>
+  <div class='LOGOS'>
+	<img src="mashiWeb.png" alt="Mashi" height="110">
+	<img src="logoUPC.jpg" alt="UPC" height="100">
+	<img src="logoESPOL.jpg" alt="ESPOL" height="100">
+	<img src="logoSENESCYT.png" alt="ESPOL" height="110">
+	<img src="logoCATECH.jpg" alt="ESPOL" height="80">
+	<img src="logoMANTIS.png" alt="ESPOL" height="80">
+	</div>
+	
+    <video id='remoteVideoFrontal' autoplay></video>
+	<video id='localVideo' autoplay></video>
+	<input id="keyControl" hola name="keyControl">
+    <input  id="dataChannelSend" name="dataChannelSend" disabled>
+    <button class='hidden' id="sendButton" disabled>Send</button>
+	
+	<div class='EFECTOS'>
+
+		<table>
+			<tr>
+				<th><button id="carButton">Sirena</button></th>
+				<th><button id="beatButton">Beat</button></th>
+			</tr>    
+			<tr>
+				<th><button id="loveButton">All you need is love</button></th>
+				<th><button id="beatButton">Beat</button></th>
+			</tr>   
+ 
+		</table>	
+	</div>
+
+<!--
+<video width="400" controls>
+  <source id="vid1" src="love.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+-->
+	
+			
+<!--
+  <div id='videoRobot'>
+            <video class='centerVideo' id='remoteVideoFrontal' autoplay></video>
+			<video id='localVideo' autoplay></video>
+			<input id="keyControl" hola name="keyControl">
+
+<!--      <table>
+         <tr>
+            <th>Remote video (robot)</th>
+            <th>Robot videoOmni</th>
+            <th>local video</th>
+        </tr>    class='center'
+ 
+      </table>
+
+    </div>
+-->
+    <div class='hidden' id="controlRobot">
+	  
+      <table>
+        <tr>
+            <td></td>
+            <td><button id="forward">adelante</button></td>
+            <td></td>
+			<td><button id="CabezaArriba">Arriba</button></td>
+        </tr>
+        <tr>
+            <td><button id="left">izquierda</button></td>
+            <td><button id="stop">stop</button></td>
+            <td><button id="right">derecha</button></td>
+			<td><button id="CabezaNormal">Normal</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button id="reverse">atras</button></td>
+            <td></td>
+			<td><button id="CabezaAbajo">Abajo</button></td>
+        </tr>
+      </table>
+      <!-- <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech> -->
+      <!-- <textarea id="dataChannelSend" disabled x-webkit-speech></textarea> -->
+    </div>
+    
+<!--	<div class='centerTts' id="Tts">-->
+<!--       <input name="dataChannelSend" id="dataChannelSend" disabled x-webkit-speech> -->
+<!--      <input  id="dataChannelSend" name="dataChannelSend" disabled>
+      <button id="sendButton" disabled>Send</button>
+      <button id="carButton">Sirena</button>
+      <button id="beatButton">Beat</button>
+  </div>
+  -->
+
+
+
+
+
+  <!--       <div id="buttons">
+          <button id="startButton">Start</button>
+          <button id="sendButton" disabled>Send</button>
+          <button id="closeButton" disabled>Stop</button>
+        </div> -->
+      
+    <div class="hidden" id="extra">
+        <h2>Adicionales</h2>
+        <button id="ledOn">Led On!</button>
+        <button id="ledOff">Led Off!</button>
+        <button id="ledBlink">Led blink!</button>
+        <button id="socialMotionTrue">SocialMotionTrue!</button>
+        <button id="socialMotionFalse">SocialMotionFalse!</button>
+        <textarea id="dataChannelReceive" disabled></textarea>
+    </div>
+
+
+<!--   <audio id="audio" autoplay controls></audio><br><br>
+  <button id="start" onclick="start()">Start</button>
+  <button id="stop" onclick="stop()">Stop</button><br><br>
+  Add local audio to output:<input id="mix" type="checkbox" onclick="doMix(this);"><br><br>
+  <pre id="display"></pre>
+ -->
+    
+  </div>
+
+  <script src='node_modules\socket.io\node_modules\socket.io-client\dist/socket.io.js'></script>
+  <script src='js/lib/adapter.js'></script>
+  <script src='js/mainDennys.js'></script>
+</body>
+</html>

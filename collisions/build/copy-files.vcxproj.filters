@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{739DB09A-CC57-A953-A6CF-F64FA08E4FA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers">
+      <UniqueIdentifier>{7FB51E50-F335-BFCC-FC17-E9D07C75561F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data">
+      <UniqueIdentifier>{D4524AD5-E897-322F-A707-70212E5D2827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data">
+      <UniqueIdentifier>{D4524AD5-E897-322F-A707-70212E5D2827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data">
+      <UniqueIdentifier>{D4524AD5-E897-322F-A707-70212E5D2827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data">
+      <UniqueIdentifier>{D4524AD5-E897-322F-A707-70212E5D2827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2">
+      <UniqueIdentifier>{9094372C-9C54-BC4A-AF6C-784CFE78C7B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\OpenNI2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:">
+      <UniqueIdentifier>{7B735499-E5DD-1C2B-6C26-70023832A1CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files">
+      <UniqueIdentifier>{92EF4BA8-6BC2-65D1-451F-28EBD4AE726A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense">
+      <UniqueIdentifier>{30966F80-2358-943A-BF33-AF9D1D609CCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2">
+      <UniqueIdentifier>{2F6C3ED8-6874-3396-EE2D-170BA0D3E580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Program Files\PrimeSense\NiTE2\Redist">
+      <UniqueIdentifier>{C44AD81D-E9F9-2DB7-9558-AA3BD33F73EC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\binding.gyp">
+      <Filter>..</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini">
+      <Filter>C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.idx">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.lbd">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam1.lbd">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam2.lbd">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\FeatureExtraction.ini">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\h.dat">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\HandAlgorithms.ini">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\s.dat">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI2.dll">
+      <Filter>C:\Program Files\OpenNI2\Redist</Filter>
+    </None>
+    <None Include="C:\Program Files\OpenNI2\Redist\OpenNI.ini">
+      <Filter>C:\Program Files\OpenNI2\Redist</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist</Filter>
+    </None>
+    <None Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini">
+      <Filter>C:\Program Files\PrimeSense\NiTE2\Redist</Filter>
+    </None>
+  </ItemGroup>
+</Project>

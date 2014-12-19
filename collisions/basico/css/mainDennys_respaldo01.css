@@ -1,0 +1,175 @@
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+#container, #page-wrapper {
+  width: 100%;
+  height
+  background: #FFFFFF;
+  padding: 0em;
+  margin: 0em auto;
+  /*border-top: 10px solid #69c773;*/
+  border: 10px solid #69c773;
+  /*box-shadow: 3 0px 0px rgba(0,0,0,2);*/
+}
+
+#videoRobot {
+	position: absolute;
+    left: 100px;
+    top: 150px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border: 10px solid #009;
+}
+
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
+}
+
+
+
+/*
+.centerVideo { 
+  margin: 0 auto; 
+  width: 850px; 
+}
+*/
+#controlRobot {
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border: 1px solid #009;
+}
+
+
+.centerControl { 
+  margin: 0px 258px; /*0 auto; */
+  width: 800px; /*465px; */
+  
+}
+
+#Tts {
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border: 1px solid #009;
+}
+
+.centerTts { 
+  margin: 0 auto; 
+  width: 500px; 
+}
+
+#dataChannelSend{
+  width: 500px;
+  padding: 0.5em;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
+  
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#msg {
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+#msg.not-supported strong {
+  color: #CC0000;
+}
+
+
+/*textarea {
+  width: 500px;
+  padding: 0.5em;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
+}
+*/
+
+
+input[type="range"] {
+  width: 90px;
+}
+
+label {
+  display: inline-block;
+  float: left;
+  width: 90px;
+}
+
+.option {
+  margin: 1em 0;
+}
+
+#buttons, button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8em;
+  background: #69c773;
+  border-bottom: 1px solid #498b50;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 0;
+  width: 150px;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+}
+
+
+#remoteVideo {
+    height: 200px;
+
+}
+
+#remoteVideoFrontal {
+    height: 450px;
+
+
+}
+
+#remoteVideoOmni {
+    height: 200px;
+
+}
+/*
+#localVideo {
+    height: 400px;
+}
+#localVideo1 {
+    height: 400px;
+}
+*/

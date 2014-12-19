@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A52D796-83A4-932A-8AFF-C7A1867A70FC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>copy-files</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\..\bin\;$(MSBuildProjectDirectory)\..\bin\</ExecutablePath>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName).node</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexpardo\.node-gyp\0.10.33\src;C:\Users\alexpardo\.node-gyp\0.10.33\deps\uv\include;C:\Users\alexpardo\.node-gyp\0.10.33\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\Users\alexpardo\.node-gyp\0.10.33\$(Configuration)\node.lib&quot;;C:\Program Files\OpenNI2\Lib\OpenNI2.lib;C:\Program Files\PrimeSense\NiTE2\Lib\NiTE2.lib</AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetExt>.node</TargetExt>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexpardo\.node-gyp\0.10.33\src;C:\Users\alexpardo\.node-gyp\0.10.33\deps\uv\include;C:\Users\alexpardo\.node-gyp\0.10.33\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexpardo\.node-gyp\0.10.33\src;C:\Users\alexpardo\.node-gyp\0.10.33\deps\uv\include;C:\Users\alexpardo\.node-gyp\0.10.33\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\Users\alexpardo\.node-gyp\0.10.33\$(Configuration)\node.lib&quot;;C:\Program Files\OpenNI2\Lib\OpenNI2.lib;C:\Program Files\PrimeSense\NiTE2\Lib\NiTE2.lib</AdditionalDependencies>
+      <AllowIsolation>true</AllowIsolation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetExt>.node</TargetExt>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexpardo\.node-gyp\0.10.33\src;C:\Users\alexpardo\.node-gyp\0.10.33\deps\uv\include;C:\Users\alexpardo\.node-gyp\0.10.33\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;BUILDING_V8_SHARED=1;BUILDING_UV_SHARED=1;BUILDING_NODE_EXTENSION;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\binding.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE.ini&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/NiTE.ini</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PSLink.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PSLink.ini</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\Kinect.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/Kinect.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/Kinect.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\Kinect.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\s.dat">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\s.dat&quot; &quot;C:\Users\alexpardo\NiTE2\s.dat&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/s.dat to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/s.dat</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\s.dat</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\h.dat">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\h.dat&quot; &quot;C:\Users\alexpardo\NiTE2\h.dat&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/h.dat to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/h.dat</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\h.dat</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam2.lbd">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam2.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsparam2.lbd&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam2.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsparam2.lbd</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsparam2.lbd</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.idx">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.idx&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsdata.idx&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.idx to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsdata.idx</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsdata.idx</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PS1080.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PS1080.ini</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\FeatureExtraction.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\FeatureExtraction.ini&quot; &quot;C:\Users\alexpardo\NiTE2\FeatureExtraction.ini&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/FeatureExtraction.ini to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/FeatureExtraction.ini</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\FeatureExtraction.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.lbd">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsdata.lbd&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsdata.lbd</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsdata.lbd</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE2.dll&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/NiTE2.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE2.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI.ini</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\HandAlgorithms.ini">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\HandAlgorithms.ini&quot; &quot;C:\Users\alexpardo\NiTE2\HandAlgorithms.ini&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/HandAlgorithms.ini to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/HandAlgorithms.ini</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\HandAlgorithms.ini</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\OniFile.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/OniFile.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/OniFile.dll</Message>
+      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\OniFile.dll</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam1.lbd">
+      <FileType>Document</FileType>
+      <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam1.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsparam1.lbd&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam1.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsparam1.lbd</Message>
+      <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsparam1.lbd</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>
