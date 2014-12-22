@@ -50,6 +50,7 @@ var BUFFER_LEN = 4;
 var STATE = 1; // by default the robot can move (1)
 var distances = [];
 var current_dist;
+var speed = 1;
 setInterval(function checkDistance(){
 	current_dist = Kinect_obj.getValue();
 	//console.log(current_dist);
@@ -69,16 +70,23 @@ setInterval(function checkDistance(){
 	}else if(distances.average() > WARN_TH){ // safe
 		console.log("Safe to move");
 		STATE = 1;
+		speed = 1;
 	}else if(distances.average() > STOP_TH && distances.average() <= WARN_TH){ // warning
 		console.log("YOU ARE GETTING CLOSER!");
+		speed = (distances.average()-STOP_TH)/(WARN_TH-STOP_TH+1);
 		STATE = 1;
 	}else if(distances.average() <= STOP_TH){ // stop
 		if(STATE == 1){
 			robotStop();
 			STATE = 0; //Robot can rotate but not move forward
 		}
+		speed = 1;
 		console.log("TOO CLOSE!!!");
 	}
+	
+	// TODO: Change moving speed
+	
+	
 }, 300);
 
 var io = require('socket.io').listen(server);
