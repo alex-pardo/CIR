@@ -19,6 +19,10 @@ var serialPortArduino = new SerialPortArduino("COM4", {baudrate: 9600}, false); 
 var SerialPortROBOTIS = require("serialport").SerialPort
 var serialPortROBOTIS = new SerialPortROBOTIS("COM5", {baudrate: 9600}, false); // this is the openImmediately flag [default is true]
 
+// Thresholds for detecting if the robot is too close
+var STOP_TH 400
+var WARN_TH 800
+
 
 console.log('Corriendo en https://localhost:8000');
 
@@ -45,10 +49,11 @@ Array.prototype.average=function(){
 var BUFFER_LEN = 4;
 var STATE = 1; // by default the robot can move (1)
 var distances = [];
+var current_dist;
 setInterval(function checkDistance(){
-	var dist_code = Kinect_obj.getValue();
-	//console.log(dist_code);
-	distances[distances.length] = dist_code;
+	current_dist = Kinect_obj.getValue();
+	//console.log(current_dist);
+	distances[distances.length] = current_dist;
 	
 	if(distances.length > BUFFER_LEN){
 		dist_new = []
@@ -59,20 +64,20 @@ setInterval(function checkDistance(){
 	}
 	//console.log(distances.average());
 	//console.log(distances);
-	if(distances.average() <= 2){ // code 0; safe
+	if(current_dist < 0){ // error
+		console.log("Distance error", current_dist);
+	}else if(distances.average() > WARN_TH){ // safe
 		console.log("Safe to move");
 		STATE = 1;
-	}else if(distances.average() > 2 && distances.average() < 6){ //code 5; warning
+	}else if(distances.average() > STOP_TH && distances.average() <= WARN_TH){ // warning
 		console.log("YOU ARE GETTING CLOSER!");
 		STATE = 1;
-	}else if(distances.average() >= 6){ //code 10; stop
+	}else if(distances.average() <= STOP_TH){ // stop
 		if(STATE == 1){
 			robotStop();
 			STATE = 0; //Robot can rotate but not move forward
 		}
 		console.log("TOO CLOSE!!!");
-	} else{ //error
-		console.log("Distance error", dist_code);
 	}
 }, 300);
 
@@ -114,6 +119,12 @@ io.sockets.on('connection', function (socket){
 		socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
 		socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
 
+	});
+	
+	// The client is asking for the current distance to the closest obstacle
+	socket.on("getDistance", function(){
+		console.log("socket.getDistance");
+		socket.emit("distance", current_dist);
 	});
 
 	socket.on('ACTUAR', function (message) {

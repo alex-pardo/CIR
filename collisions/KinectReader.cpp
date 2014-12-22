@@ -16,9 +16,9 @@ using namespace v8;
 
 #define SAMPLE_READ_WAIT_TIMEOUT 2000 //2000ms
 
-#define STOP_TH 400
+//#define STOP_TH 400
 
-#define WARN_TH 800
+//#define WARN_TH 800
 
 using namespace openni;
 
@@ -177,7 +177,7 @@ int KinectReader::getVal() {
 	}
 
 
-
+	/*
 	if(min_val <= WARN_TH){
 		if(min_val <= STOP_TH){
 			//printf(">>>>>>>>>>STOP!!\n");
@@ -189,5 +189,7 @@ int KinectReader::getVal() {
 	}
 
 	return 0;
+	*/
+	return min_val;
 }
 

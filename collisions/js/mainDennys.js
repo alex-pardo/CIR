@@ -149,6 +149,14 @@ MediaStreamTrack.getSources(function (media_sources) {
 
 //////////////////////////////////////////////////////////////////////////////
 
+/*  Set timer for asking for MASHI distance update  */
+setInterval(function () {
+	if(isChannelReady){
+		socket.emit("getDistance");
+	}
+}, 500); // update every 500ms
+
+
 var socket = io.connect();
 var room = 'robotRoom';
 if (room !== '') {
@@ -177,6 +185,13 @@ socket.on('created', function (room){
   console.log(user + ' getUserMedia, constraints', constraints);
   getUserMedia(constraints, handleUserMedia, handleUserMediaError);
   
+});
+
+
+// We are receiving the current robot's distance to the closest obstacle
+socket.on("distance", function(dist){
+	console.log("Distance to the closest obstacle: " + dist);
+	document.getElementById("dispDistance").innerHTML = "Collision distance: " + dist;
 });
 
 
