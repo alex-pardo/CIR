@@ -191,7 +191,7 @@ socket.on('created', function (room){
 // We are receiving the current robot's distance to the closest obstacle
 socket.on("distance", function(dist){
 	console.log("Distance to the closest obstacle: " + dist);
-	document.getElementById("dispDistance").innerHTML = "Collision distance: " + dist;
+	document.getElementById("dispDistance").innerHTML = "Collision distance: " + dist + "mm";
 });
 
 
