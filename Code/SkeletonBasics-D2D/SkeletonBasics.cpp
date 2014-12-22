@@ -8,6 +8,8 @@
 #include <strsafe.h>
 #include "SkeletonBasics.h"
 #include "resource.h"
+#include <math.h>
+#include "guicon.h"
 
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
@@ -16,15 +18,20 @@ static const float g_InferredBoneThickness = 1.0f;
 
 float last_x = 0;
 float last_y = 0;
+float last_z = 0;
+int elapsed_frames = 0;
+int gesture_detected = 0;
 
 // EDITED BY: Marc Bolaños
-static const float thres_move = 100;
+static const float thres_move = 0.1;
 static const int NONE = 0;
 static const int LEFT = 1;
 static const int RIGHT = 2;
 static const int FORWARD = 3;
 static const int BACKWARD = 4;
 static const int STOP = 5;
+
+static const int INACTIVE_FRAMES = 20;
 
 /// <summary>
 /// Entry point for the application
@@ -36,6 +43,7 @@ static const int STOP = 5;
 /// <returns>status</returns>
 int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
+	RedirectIOToConsole();
     CSkeletonBasics application;
     application.Run(hInstance, nCmdShow);
 }
@@ -63,6 +71,8 @@ CSkeletonBasics::CSkeletonBasics() :
 /// </summary>
 CSkeletonBasics::~CSkeletonBasics()
 {
+	
+
     if (m_pNuiSensor)
     {
         m_pNuiSensor->NuiShutdown();
@@ -438,58 +448,100 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
         }
     }
 
-	float x, y;
+	float x, y, z;
 	const Vector4 fromPos = skel.SkeletonPositions[NUI_SKELETON_POSITION_HAND_RIGHT];
-	NuiTransformSkeletonToDepthImage(fromPos, &x, &y, NUI_IMAGE_RESOLUTION_320x240);
 	
-    // EDITED BY: Marc Bolaños
-    // Checks the most relevant hand movement and translates it into a code for moving the robot
-    float diffx, diffy;
-    float max_val;
-    int movement;
-    
-    diffx = last_x - x;
-    diffy = last_y - y;
-    max_val = max(diffx,diffy);
-    if(max_val > thres_move){
-        // MAX X AXIS
-        if (max_val == diffx){
-            if(max_val > 0)
-                movement = LEFT;
-            else if(max_val < 0)
-                movement = RIGHT;
-        // MAX Y AXIS
-        } else if (max_val == diffy){
-            movement = STOP;
-        }
-        // MAX Z AXIS?????
-        
-        // FORWARD
-        
-        //BACKWARD
-        
-    // Movement intensity not relevant enough to be considered an order
-    } else {
-        movement = NONE;
-    }
-    ////////////////////////////////////////////////////////////////
-    
-	if(last_x > x){
-		SetStatusMessage(L"X is greater");
+	//NuiTransformSkeletonToDepthImage(fromPos, &x, &y, NUI_IMAGE_RESOLUTION_640x480);
+	
+	z = fromPos.z;
+	x = fromPos.x;
+	y = fromPos.y;
+
+	if (gesture_detected == 1 && elapsed_frames < INACTIVE_FRAMES){
+		elapsed_frames ++;
+		if (elapsed_frames > 20){
+			SetStatusMessage(L"");
+		}
 	} else{
-		SetStatusMessage(L"X is smaller");
+		gesture_detected = 0;
+		elapsed_frames = 0;
+
+		// EDITED BY: Marc Bolañoss
+		// Checks the most relevant hand movement and translates it into a code for moving the robot
+		float diffx, diffy, diffz;
+		float max_val;
+		int movement;
+    
+		diffx = last_x - x;
+		diffy = last_y - y;
+		diffz = last_z - z;
+
+		//fprintf(stdout, "%f, %f, %f\n", x,y,z);
+		
+		//diffz = last_z - z;
+		max_val = max(max(fabs(diffx),fabs(diffy)), fabs(diffz));
+		if(max_val > thres_move){
+			gesture_detected = 1;
+			// MAX X AXIS
+			if (max_val == fabs(diffx)){
+				fprintf(stdout, "X AXIS  %f %f, %f, %f\n",max_val, diffx,diffy,diffz);
+				if(diffx > 0)
+					movement = LEFT;
+				else if(diffx < 0)
+					movement = RIGHT;
+			// MAX Y AXIS
+			} else if (max_val == fabs(diffy)){
+				fprintf(stdout, "Y AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
+				movement = STOP;
+			// MAX Z AXIS 
+			} else if (max_val == fabs(diffz)){
+				fprintf(stdout, "Z AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
+				if(diffz > 0)
+					movement = FORWARD;
+				else if(diffz < 0)
+					movement = BACKWARD;
+			} else{
+				SetStatusMessage(L"NO GESTURE");
+			}
+		// Movement intensity not relevant enough to be considered an order
+		} else {
+			movement = NONE;
+		}
+		////////////////////////////////////////////////////////////////
+		switch (movement)
+		{
+		case LEFT:
+			SetStatusMessage(L"LEFT");
+			break;
+		case RIGHT:
+			SetStatusMessage(L"RIGHT");
+			break;
+		case FORWARD:
+			SetStatusMessage(L"FORWARD");
+			break;
+		case BACKWARD:
+			SetStatusMessage(L"BACKWARD");
+			break;
+		case STOP:
+			SetStatusMessage(L"STOP");
+			break;
+		default:
+			//SetStatusMessage(L"NONE");
+			break;
+		}
+
+
 	}
 
-	if(last_y > y){
-		SetStatusMessage(L"Y is greater");
-	} else{
-		SetStatusMessage(L"Y is smaller");
-	}
-    
+	
+	
+
+	// http://dslweb.nwnexus.com/~ast/dload/guicon.htm
     
 
 	last_x = x;
 	last_y = y;
+	last_z = z;
 
 
 
