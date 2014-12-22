@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7BE479F6-8CB5-D86E-34FF-F895E212BB8C}</ProjectGuid>
+    <ProjectGuid>{86FDBB95-A719-1C7E-B287-2929F89AC255}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>addon</RootNamespace>
   </PropertyGroup>

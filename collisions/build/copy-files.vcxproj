@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6A52D796-83A4-932A-8AFF-C7A1867A70FC}</ProjectGuid>
+    <ProjectGuid>{E8007989-3CC0-776E-728B-60F923C4C0BE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>copy-files</RootNamespace>
   </PropertyGroup>
@@ -127,110 +127,110 @@
   <ItemGroup>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2.dll&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE.ini&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/NiTE.ini</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE.ini</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE.ini&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\NiTE.ini&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE.ini to C:\Users\alexpardo\CIR_proj\collisions/build/Release/NiTE.ini</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\NiTE.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.dll&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PSLink.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PSLink.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/PSLink.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PSLink.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.ini&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PSLink.ini</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PSLink.ini</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PSLink.ini&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PSLink.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PSLink.ini to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/PSLink.ini</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PSLink.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\Kinect.dll&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/Kinect.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/Kinect.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\Kinect.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\Kinect.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\Kinect.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/Kinect.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/Kinect.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\Kinect.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\s.dat">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\s.dat&quot; &quot;C:\Users\alexpardo\NiTE2\s.dat&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/s.dat to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/s.dat</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/s.dat to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/s.dat</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\s.dat</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\h.dat">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\h.dat&quot; &quot;C:\Users\alexpardo\NiTE2\h.dat&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/h.dat to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/h.dat</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/h.dat to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/h.dat</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\h.dat</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam2.lbd">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam2.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsparam2.lbd&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam2.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsparam2.lbd</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam2.lbd to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/Data/lbsparam2.lbd</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsparam2.lbd</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.idx">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.idx&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsdata.idx&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.idx to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsdata.idx</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.idx to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/Data/lbsdata.idx</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsdata.idx</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.dll&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PS1080.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PS1080.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/PS1080.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PS1080.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.ini&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/PS1080.ini</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\PS1080.ini</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\PS1080.ini&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PS1080.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/PS1080.ini to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/PS1080.ini</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\PS1080.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\FeatureExtraction.ini">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\FeatureExtraction.ini&quot; &quot;C:\Users\alexpardo\NiTE2\FeatureExtraction.ini&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/FeatureExtraction.ini to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/FeatureExtraction.ini</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/FeatureExtraction.ini to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/FeatureExtraction.ini</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\FeatureExtraction.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.lbd">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsdata.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsdata.lbd&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsdata.lbd</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsdata.lbd to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/Data/lbsdata.lbd</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsdata.lbd</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE2.dll&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/NiTE2.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\NiTE2.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\NiTE2.dll&quot;</Command>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/NiTE2.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\NiTE2.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI.ini">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI.ini&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI.ini&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI.ini to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI.ini</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI.ini</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI.ini&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI.ini&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI.ini to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI.ini</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\HandAlgorithms.ini">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\HandAlgorithms.ini&quot; &quot;C:\Users\alexpardo\NiTE2\HandAlgorithms.ini&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/HandAlgorithms.ini to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/HandAlgorithms.ini</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/HandAlgorithms.ini to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/HandAlgorithms.ini</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\HandAlgorithms.ini</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll&quot; &quot;C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\OniFile.dll&quot;</Command>
-      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/OniFile.dll to C:\Users\alexpardo\Desktop\webrtc_test/build/Release/OpenNI2/Drivers/OniFile.dll</Message>
-      <Outputs>C:\Users\alexpardo\Desktop\webrtc_test\build\Release\OpenNI2\Drivers\OniFile.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\OpenNI2\Redist\OpenNI2\Drivers\OniFile.dll&quot; &quot;C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\OniFile.dll&quot;</Command>
+      <Message>Copying C:/Program Files/OpenNI2/Redist/OpenNI2/Drivers/OniFile.dll to C:\Users\alexpardo\CIR_proj\collisions/build/Release/OpenNI2/Drivers/OniFile.dll</Message>
+      <Outputs>C:\Users\alexpardo\CIR_proj\collisions\build\Release\OpenNI2\Drivers\OniFile.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam1.lbd">
       <FileType>Document</FileType>
       <Command>call mkdir &quot;C:\Users\alexpardo\NiTE2\Data&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Program Files\PrimeSense\NiTE2\Redist\NiTE2\Data\lbsparam1.lbd&quot; &quot;C:\Users\alexpardo\NiTE2\Data\lbsparam1.lbd&quot;</Command>
-      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam1.lbd to C:\Users\alexpardo\Desktop\webrtc_test/../../NiTE2/Data/lbsparam1.lbd</Message>
+      <Message>Copying C:/Program Files/PrimeSense/NiTE2/Redist/NiTE2/Data/lbsparam1.lbd to C:\Users\alexpardo\CIR_proj\collisions/../../NiTE2/Data/lbsparam1.lbd</Message>
       <Outputs>C:\Users\alexpardo\NiTE2\Data\lbsparam1.lbd</Outputs>
     </CustomBuild>
   </ItemGroup>
