@@ -13,31 +13,68 @@ app.use(express.static(__dirname));
 var server = https.createServer({key: privateKey, cert: certificate}, app).listen(8000);
 
 var keypress = require('keypress');
-/*var SerialPortArduino = require("serialport").SerialPort
-var serialPortArduino = new SerialPortArduino("COM13", {baudrate: 9600}, false); // this is the openImmediately flag [default is true]
+var SerialPortArduino = require("serialport").SerialPort
+var serialPortArduino = new SerialPortArduino("COM4", {baudrate: 9600}, false); // this is the openImmediately flag [default is true]
 
 var SerialPortROBOTIS = require("serialport").SerialPort
-var serialPortROBOTIS = new SerialPortROBOTIS("COM10", {baudrate: 9600}, false); // this is the openImmediately flag [default is true]
+var serialPortROBOTIS = new SerialPortROBOTIS("COM5", {baudrate: 9600}, false); // this is the openImmediately flag [default is true]
 
-*/
+
 console.log('Corriendo en https://localhost:8000');
 
 var addon = require('bindings')('addon');
 var Kinect_obj = new addon.KinectReader(10);
-var last_
+var last_;
+
+Array.prototype.average=function(){
+    var sum=0;
+    var j=0;
+    for(var i=0;i<this.length;i++){
+        if(isFinite(this[i])){
+          sum=sum+parseFloat(this[i]);
+           j++;
+        }
+    }
+    if(j===0){
+        return 0;
+    }else{
+        return sum/j;
+    }
+
+}
+var BUFFER_LEN = 4;
+var STATE = 1; // by default the robot can move (1)
+var distances = [];
 setInterval(function checkDistance(){
 	var dist_code = Kinect_obj.getValue();
-	if(dist_code == 0){ // safe
+	//console.log(dist_code);
+	distances[distances.length] = dist_code;
+	
+	if(distances.length > BUFFER_LEN){
+		dist_new = []
+		for(var i = 1; i < distances.length; i++){
+			dist_new[dist_new.length] = distances[i]
+		}
+		distances = dist_new;
+	}
+	//console.log(distances.average());
+	//console.log(distances);
+	if(distances.average() <= 2){ // code 0; safe
 		console.log("Safe to move");
-	}else if(dist_code == 5){ //warning
-		console.log("Warning!!");
-	}else if(dist_code == 10){ //stop
-		//robotStop();
-		console.log("STOP!!!");
+		STATE = 1;
+	}else if(distances.average() > 2 && distances.average() < 6){ //code 5; warning
+		console.log("YOU ARE GETTING CLOSER!");
+		STATE = 1;
+	}else if(distances.average() >= 6){ //code 10; stop
+		if(STATE == 1){
+			robotStop();
+			STATE = 0; //Robot can rotate but not move forward
+		}
+		console.log("TOO CLOSE!!!");
 	} else{ //error
 		console.log("Distance error", dist_code);
 	}
-}, 500);
+}, 300);
 
 var io = require('socket.io').listen(server);
 
@@ -81,7 +118,7 @@ io.sockets.on('connection', function (socket){
 
 	socket.on('ACTUAR', function (message) {
 		console.log('socket.on ACTUAR: ', message);
-		if (message=='forward')
+		if (message=='forward' && STATE == 1)
 			robotForward();
 		else if (message=='left') 
 			robotLeft();
@@ -112,7 +149,7 @@ io.sockets.on('connection', function (socket){
 // BASE MOTION
 /////////////////////////////////////////////////////
 
-/*
+
 var robotForward = function () {
     console.log('robotForward');
     serialPortArduino.write("1");
@@ -197,7 +234,7 @@ var headZero = function () {
     serialPortROBOTIS.write("7");
 }
 
-*/
+
 
 
 ///////////////////////////////////////////
@@ -209,25 +246,27 @@ keypress(process.stdin);
 var keys = {
     'w': function () {
         console.log('Forward!');
-        //serialPortArduino.write("1");
+		if (STATE == 1){
+			serialPortArduino.write("1");
+		}
 
     },
     's': function () {
         console.log('Reverse!');
-        //serialPortArduino.write("2");
+        serialPortArduino.write("2");
 
     },
     'a': function () {
         console.log('Turn left!');
-        //serialPortArduino.write("3");
+        serialPortArduino.write("3");
     },
     'd': function () {
         console.log('Turn right!');
-        //serialPortArduino.write("4");
+        serialPortArduino.write("4");
     },
     'space': function () {
         console.log('STOP!');
-        //serialPortArduino.write("5");
+        serialPortArduino.write("5");
     },
 	///////////////////////////////////////
 	// HEAD MOTION
@@ -235,39 +274,39 @@ var keys = {
   	// PITCH
     'u': function () {
         console.log('SERVER KEY PITCHUP');
-        //serialPortROBOTIS.write("1");
+        serialPortROBOTIS.write("1");
 
     },
     'm': function () {
         console.log('SERVER KEY PITCHDOWN');
-        //serialPortROBOTIS.write("2");
+        serialPortROBOTIS.write("2");
 
     },
 	// YAW
     'h': function () {
         console.log('SERVER KEY YAWLEFT');
-        //serialPortROBOTIS.write("3");
+        serialPortROBOTIS.write("3");
 
     },
     'k': function () {
         console.log('SERVER KEY YAWRIGHT');
-        //serialPortROBOTIS.write("4");
+        serialPortROBOTIS.write("4");
 
     },
 	// ROLL
     'y': function () {
         console.log('SERVER KEY ROLLLEFT');
-        //serialPortROBOTIS.write("5");
+        serialPortROBOTIS.write("5");
 
     },
     'i': function () {
         console.log('SERVER KEY ROLLRIGHT');
-        //serialPortROBOTIS.write("6");
+        serialPortROBOTIS.write("6");
 
     },
     'j': function () {
         console.log('HEADZERO');
-        //serialPortROBOTIS.write("7");
+        serialPortROBOTIS.write("7");
 
     }
 }
@@ -285,7 +324,7 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 
 // abriendo puerto serial
-/*
+
 serialPortArduino.open(function () {
     console.log('Server: serialport.open');
     serialPortArduino.on('data', function (data) {
@@ -299,11 +338,11 @@ serialPortROBOTIS.open(function () {
         console.log('Server: dato recibido: ' + data);
     });
 });
-*/
+
 var quit = function () {
     console.log('Server: Saliendo de keypress y serialport...');
-    //serialPortArduino.close();
-    //serialPortROBOTIS.close();
+    serialPortArduino.close();
+    serialPortROBOTIS.close();
     process.stdin.pause();
     process.exit();
 }

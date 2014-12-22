@@ -21,6 +21,7 @@ class KinectReader : public node::ObjectWrap {
 
   int initDev();
   int getVal();
+
 };
 
 #endif

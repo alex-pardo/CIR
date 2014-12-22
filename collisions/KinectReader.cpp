@@ -16,9 +16,9 @@ using namespace v8;
 
 #define SAMPLE_READ_WAIT_TIMEOUT 2000 //2000ms
 
-#define STOP_TH 0
+#define STOP_TH 400
 
-#define WARN_TH 500
+#define WARN_TH 800
 
 using namespace openni;
 
@@ -139,9 +139,9 @@ int KinectReader::getVal() {
 	DepthPixel* pDepth = (DepthPixel*)frame_.getData();
 
 		
-	int size_patch = 150;
+	int size_patch = 100;
 	int jump_path = 30;
-	int min_points = 100*100;
+	int min_points = 30*30;
   
 		
 	int width = frame_.getWidth();
@@ -176,6 +176,8 @@ int KinectReader::getVal() {
 		}
 	}
 
+
+
 	if(min_val <= WARN_TH){
 		if(min_val <= STOP_TH){
 			//printf(">>>>>>>>>>STOP!!\n");
@@ -188,3 +190,4 @@ int KinectReader::getVal() {
 
 	return 0;
 }
+
