@@ -23,7 +23,7 @@ int elapsed_frames = 0;
 int gesture_detected = 0;
 
 // EDITED BY: Marc Bolaños
-static const float thres_move = 0.1;
+static const float thres_move = 0.05;
 static const int NONE = 0;
 static const int LEFT = 1;
 static const int RIGHT = 2;
@@ -484,22 +484,31 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
 			gesture_detected = 1;
 			// MAX X AXIS
 			if (max_val == fabs(diffx)){
-				fprintf(stdout, "X AXIS  %f %f, %f, %f\n",max_val, diffx,diffy,diffz);
-				if(diffx > 0)
+				
+				if(diffx > 0){
+					fprintf(stdout, "-X AXIS  %f %f, %f, %f\n",max_val, diffx,diffy,diffz);
 					movement = LEFT;
-				else if(diffx < 0)
+				}else if(diffx < 0){
+					fprintf(stdout, "+X AXIS  %f %f, %f, %f\n",max_val, diffx,diffy,diffz);
 					movement = RIGHT;
+				}
 			// MAX Y AXIS
 			} else if (max_val == fabs(diffy)){
-				fprintf(stdout, "Y AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
+				if(diffy > 0) 
+					fprintf(stdout, "-Y AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
+				else if(diffy < 0)
+					fprintf(stdout, "+Y AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
 				movement = STOP;
 			// MAX Z AXIS 
 			} else if (max_val == fabs(diffz)){
-				fprintf(stdout, "Z AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
-				if(diffz > 0)
+				
+				if(diffz > 0){
+					fprintf(stdout, "-Z AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
 					movement = FORWARD;
-				else if(diffz < 0)
+				}else if(diffz < 0){
+					fprintf(stdout, "+Z AXIS  %f, %f, %f, %f\n",max_val, diffx,diffy,diffz);
 					movement = BACKWARD;
+				}
 			} else{
 				SetStatusMessage(L"NO GESTURE");
 			}
