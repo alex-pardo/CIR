@@ -11,6 +11,10 @@
 #include <math.h>
 #include "guicon.h"
 
+
+#include "QWsServer.h"
+#include "QWsSocket.h"
+
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
 static const float g_InferredBoneThickness = 1.0f;
@@ -33,6 +37,10 @@ static const int STOP = 5;
 
 static const int INACTIVE_FRAMES = 20;
 
+int last_gesture_detected = -1;
+
+
+
 /// <summary>
 /// Entry point for the application
 /// </summary>
@@ -44,6 +52,7 @@ static const int INACTIVE_FRAMES = 20;
 int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
 	RedirectIOToConsole();
+	
     CSkeletonBasics application;
     application.Run(hInstance, nCmdShow);
 }
