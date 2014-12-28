@@ -4,6 +4,25 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
+#define WIN32_LEAN_AND_MEAN
+
+#include <windows.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <iostream>
+#include <string>
+
+// Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
+#pragma comment (lib, "Ws2_32.lib")
+#pragma comment (lib, "Mswsock.lib")
+#pragma comment (lib, "AdvApi32.lib")
+
+
+#define DEFAULT_BUFLEN 512
+#define DEFAULT_PORT "27015"
+
 #include "stdafx.h"
 #include <strsafe.h>
 #include "SkeletonBasics.h"
@@ -12,8 +31,6 @@
 #include "guicon.h"
 
 
-#include "QWsServer.h"
-#include "QWsSocket.h"
 
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
@@ -39,7 +56,15 @@ static const int INACTIVE_FRAMES = 20;
 
 int last_gesture_detected = -1;
 
-
+WSADATA wsaData;
+SOCKET ConnectSocket = INVALID_SOCKET;
+struct addrinfo *result = NULL,
+                *ptr = NULL,
+                hints;
+   
+char recvbuf[DEFAULT_BUFLEN];
+int iResult;
+int recvbuflen = DEFAULT_BUFLEN;
 
 /// <summary>
 /// Entry point for the application
@@ -61,6 +86,8 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmd
 /// Constructor
 /// </summary>
 CSkeletonBasics::CSkeletonBasics() :
+
+
     m_pD2DFactory(NULL),
     m_hNextSkeletonEvent(INVALID_HANDLE_VALUE),
     m_pSkeletonStreamHandle(INVALID_HANDLE_VALUE),
@@ -72,6 +99,7 @@ CSkeletonBasics::CSkeletonBasics() :
     m_pBrushBoneInferred(NULL),
     m_pNuiSensor(NULL)
 {
+	initClient();
     ZeroMemory(m_Points,sizeof(m_Points));
 }
 
@@ -80,6 +108,7 @@ CSkeletonBasics::CSkeletonBasics() :
 /// </summary>
 CSkeletonBasics::~CSkeletonBasics()
 {
+	
 	
 
     if (m_pNuiSensor)
@@ -101,6 +130,108 @@ CSkeletonBasics::~CSkeletonBasics()
     SafeRelease(m_pNuiSensor);
 }
 
+
+int CSkeletonBasics::initClient(){
+	
+    
+    // Initialize Winsock
+    iResult = WSAStartup(MAKEWORD(2,2), &wsaData);
+    if (iResult != 0) {
+        fprintf(stdout, "WSAStartup failed with error: %d\n", iResult);
+        return 1;
+    }
+
+    ZeroMemory( &hints, sizeof(hints) );
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+
+    // Resolve the server address and port
+    iResult = getaddrinfo("localhost", DEFAULT_PORT, &hints, &result);
+    if ( iResult != 0 ) {
+        fprintf(stdout, "getaddrinfo failed with error: %d\n", iResult);
+        WSACleanup();
+        return 1;
+    }
+
+    // Attempt to connect to an address until one succeeds
+    for(ptr=result; ptr != NULL ;ptr=ptr->ai_next) {
+
+        // Create a SOCKET for connecting to server
+        ConnectSocket = socket(ptr->ai_family, ptr->ai_socktype, 
+            ptr->ai_protocol);
+        if (ConnectSocket == INVALID_SOCKET) {
+            fprintf(stdout, "socket failed with error: %ld\n", WSAGetLastError());
+            WSACleanup();
+            return 1;
+        }
+
+        // Connect to server.
+        iResult = connect( ConnectSocket, ptr->ai_addr, (int)ptr->ai_addrlen);
+        if (iResult == SOCKET_ERROR) {
+            closesocket(ConnectSocket);
+            ConnectSocket = INVALID_SOCKET;
+            continue;
+        }
+        break;
+    }
+
+    freeaddrinfo(result);
+
+    if (ConnectSocket == INVALID_SOCKET) {
+        fprintf(stdout, "Unable to connect to server!\n");
+        WSACleanup();
+        return 1;
+    }
+	fprintf(stdout, "Connected to the server\n");
+	return 1;
+}
+
+void CSkeletonBasics::sendGesture(){
+
+	char * msg;
+	switch (last_gesture_detected)
+		{
+		case LEFT:
+			msg = "left";
+			break;
+		case RIGHT:
+			msg = "right";
+			break;
+		case FORWARD:
+			msg = "forward";
+			break;
+		case BACKWARD:
+			msg = "backward";
+			break;
+		case STOP:
+			msg = "stop";
+			break;
+		default:
+			msg = "none";
+			break;
+		}
+
+	iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
+	if ( iResult > 0 ){
+		iResult = send( ConnectSocket, msg, (int)strlen(msg), 0 );
+	}
+
+}
+
+void CSkeletonBasics::closeConnection(){
+	// shutdown the connection since no more data will be sent
+    iResult = shutdown(ConnectSocket, SD_SEND);
+    if (iResult == SOCKET_ERROR) {
+        fprintf(stdout, "shutdown failed with error: %d\n", WSAGetLastError());
+        closesocket(ConnectSocket);
+        WSACleanup();
+    } else{
+		// cleanup
+		closesocket(ConnectSocket);
+		WSACleanup();
+	}
+}
 /// <summary>
 /// Creates the main window and begins processing
 /// </summary>
@@ -525,6 +656,9 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
 		} else {
 			movement = NONE;
 		}
+
+		last_gesture_detected = movement;
+		sendGesture();
 		////////////////////////////////////////////////////////////////
 		switch (movement)
 		{

@@ -27,6 +27,9 @@ public:
     /// </summary>
     ~CSkeletonBasics();
 
+	int initClient();
+	void sendGesture();
+	void closeConnection();
     /// <summary>
     /// Handles window messages, passes most to the class instance to handle
     /// </summary>
