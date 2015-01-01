@@ -24,6 +24,9 @@ var serialPortROBOTIS = new SerialPortROBOTIS("COM5", {baudrate: 9600}, false); 
 var STOP_TH = 400;
 var WARN_TH = 800;
 
+// Velocity command HEX code
+var VELO =	0X01;
+var offset = 100;
 
 console.log('Corriendo en https://localhost:8000');
 
@@ -84,9 +87,6 @@ setInterval(function checkDistance(){
 		speed = 1;
 		console.log("TOO CLOSE!!!");
 	}
-	
-	// TODO: Change moving speed
-	
 	
 }, 300);
 
@@ -172,51 +172,51 @@ io.sockets.on('connection', function (socket){
 
 var robotForward = function () {
     console.log('robotForward');
-    //serialPortArduino.write("1");
+    serialPortArduino.write("1");
 }
 
 var robotReverse = function () {
     console.log('robotReverse');
-    //serialPortArduino.write("2");
+    serialPortArduino.write("2");
 }
 
 var robotLeft = function () {
     console.log('robotLeft');
-    //serialPortArduino.write("3");
+    serialPortArduino.write("3");
 }
 var robotRight = function () {
     console.log('robotRight');
-    //serialPortArduino.write("4");
+    serialPortArduino.write("4");
 }
 var robotStop = function () {
     console.log('robotStop');
-    //serialPortArduino.write("5");
+    serialPortArduino.write("5");
 }
 
 
 var ledOn = function () {
     console.log('ledOn');
-    //serialPortArduino.write("6");
+    serialPortArduino.write("6");
 }
 
 var ledOff = function () {
     console.log('ledOff');
-    //serialPortArduino.write("7");
+    serialPortArduino.write("7");
 }
 
 
 var ledBlink = function () {
     console.log('ledBlink');
-    //serialPortArduino.write("8");
+    serialPortArduino.write("8");
 }
 
 var socialMotionTrue = function () {
     console.log('ledBlink');
-    //serialPortArduino.write("9");
+    serialPortArduino.write("9");
 }
 var socialMotionFalse = function () {
     console.log('ledBlink');
-    //serialPortArduino.write("10");
+    serialPortArduino.write("10");
 }
 
 /////////////////////////////////////////////////////
@@ -224,34 +224,34 @@ var socialMotionFalse = function () {
 /////////////////////////////////////////////////////
 var pitchUp = function () {
     console.log('pitchUp');
-    //serialPortROBOTIS.write("1");
+    serialPortROBOTIS.write("1");
 }
 var pitchDown = function () {
     console.log('pitchDown');
-    //serialPortROBOTIS.write("2");
+    serialPortROBOTIS.write("2");
 }
 
 var yawLeft = function () {
     console.log('yawLeft');
-    //serialPortROBOTIS.write("3");
+    serialPortROBOTIS.write("3");
 }
 var yawRight = function () {
     console.log('yawRight');
-    //serialPortROBOTIS.write("4");
+    serialPortROBOTIS.write("4");
 }
 
 var rollLeft = function () {
     console.log('rollLeft');
-    //serialPortROBOTIS.write("5");
+    serialPortROBOTIS.write("5");
 }
 var rollRight = function () {
     console.log('rollRight');
-    //serialPortROBOTIS.write("6");
+    serialPortROBOTIS.write("6");
 }
 
 var headZero = function () {
     console.log('headZero');
-    //serialPortROBOTIS.write("7");
+    serialPortROBOTIS.write("7");
 }
 
 
@@ -261,6 +261,14 @@ var headZero = function () {
 // KEYPRESS
 ///////////////////////////////////////////
 
+var baseCommand = function(var1 , var2 , var3 ) {
+    bufferBase[0] = var1;
+    bufferBase[1] = var2;
+    bufferBase[2] = var3;
+    console.log('baseCommand = ',bufferBase);
+    serialPortArduino.write(bufferBase);
+}
+
 keypress(process.stdin);
 
 var keys = {
@@ -268,7 +276,10 @@ var keys = {
         
 		if (STATE == 1){
 			console.log('Forward!');
+			// Un comment next line to have a fixed speed
 			//serialPortArduino.write("1");
+			// Comment next line to have a fixed speed
+			baseCommand (VELO, 100*speed + offset , 100*speed + offset );
 		} else{
 			console.log('Not allowed to move forward!');
 		}
@@ -276,20 +287,20 @@ var keys = {
     },
     's': function () {
         console.log('Reverse!');
-        //serialPortArduino.write("2");
+        serialPortArduino.write("2");
 
     },
     'a': function () {
         console.log('Turn left!');
-        //serialPortArduino.write("3");
+        serialPortArduino.write("3");
     },
     'd': function () {
         console.log('Turn right!');
-        //serialPortArduino.write("4");
+        serialPortArduino.write("4");
     },
     'space': function () {
         console.log('STOP!');
-        //serialPortArduino.write("5");
+        serialPortArduino.write("5");
     },
 	///////////////////////////////////////
 	// HEAD MOTION
@@ -297,39 +308,39 @@ var keys = {
   	// PITCH
     'u': function () {
         console.log('SERVER KEY PITCHUP');
-        //serialPortROBOTIS.write("1");
+        serialPortROBOTIS.write("1");
 
     },
     'm': function () {
         console.log('SERVER KEY PITCHDOWN');
-        //serialPortROBOTIS.write("2");
+        serialPortROBOTIS.write("2");
 
     },
 	// YAW
     'h': function () {
         console.log('SERVER KEY YAWLEFT');
-        //serialPortROBOTIS.write("3");
+        serialPortROBOTIS.write("3");
 
     },
     'k': function () {
         console.log('SERVER KEY YAWRIGHT');
-        //serialPortROBOTIS.write("4");
+        serialPortROBOTIS.write("4");
 
     },
 	// ROLL
     'y': function () {
         console.log('SERVER KEY ROLLLEFT');
-        //serialPortROBOTIS.write("5");
+        serialPortROBOTIS.write("5");
 
     },
     'i': function () {
         console.log('SERVER KEY ROLLRIGHT');
-        //serialPortROBOTIS.write("6");
+        serialPortROBOTIS.write("6");
 
     },
     'j': function () {
         console.log('HEADZERO');
-        //serialPortROBOTIS.write("7");
+        serialPortROBOTIS.write("7");
 
     }
 }
@@ -347,7 +358,7 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 
 // abriendo puerto serial
-/*
+
 serialPortArduino.open(function () {
     console.log('Server: serialport.open');
     serialPortArduino.on('data', function (data) {
@@ -361,11 +372,11 @@ serialPortROBOTIS.open(function () {
         console.log('Server: dato recibido: ' + data);
     });
 });
-*/
+
 var quit = function () {
     console.log('Server: Saliendo de keypress y serialport...');
-    //serialPortArduino.close();
-    //serialPortROBOTIS.close();
+    serialPortArduino.close();
+    serialPortROBOTIS.close();
     process.stdin.pause();
     process.exit();
 }
