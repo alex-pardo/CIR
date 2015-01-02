@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\include{packages}
+
+\begin{document}
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\centering
+%\center % Center everything on the page
+
+\textsc{\Large Cognitive Interaction with Robots}\\[0.5cm] % Major 
+
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Safety \& Control Improvement in Human-Robot Interaction}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.5\textwidth}
+	\begin{flushleft} \large
+		\emph{Authors:}\\
+		Alex \textsc{Pardo}\\
+		Marc \textsc{Bolaños}\\
+		Pablo \textsc{Pardo}\\
+	\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+		\emph{Professors:} \\
+		Cecilio \textsc{Angulo}\\ % Supervisor's Name
+		Marta \textsc{Díaz}
+	\end{flushright}
+\end{minipage}\\[4cm]
+
+
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+\includegraphics{images/upc_logo.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\include{introduction}
+\include{rel_work}
+\include{implementation}
+\include{test}
+\include{conclusions}
+
+\clearpage
+\bibliographystyle{plain}
+\bibliography{cir}{}
+
+\end{document}
