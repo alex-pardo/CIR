@@ -150,15 +150,36 @@ MediaStreamTrack.getSources(function (media_sources) {
 });
 
 //////////////////////////////////////////////////////////////////////////////
-
-var socket = io.connect();
 var room = 'robotRoom';
-if (room !== '') {
-  //console.log('Creando or join room', room);
-  socket.emit('create or join', room);
-}
+var gesture = io.connect('http://localhost:7000');
 
-socket.on('created', function (room){
+
+//var socket = io.connect();
+
+if (room !== '') {
+  console.log('create or join room', room);
+  gesture.emit('create or join', room);
+  //socket.emit('create or join', room);
+}
+///////////// GESTURE SERVER
+gesture.on('join', function (room){
+  // aqui entra el robot
+  console.log(user + ' join ' + room + ' on Gesture Server!');
+});
+
+gesture.on('joined', function (room){
+  //aqui entra dennys
+    console.log(user + ' joined ' + room+' on Gesture Server');
+
+});
+
+gesture.on('gesture', function (message){
+	console.log('Gesture Server says:'+ message);
+});
+
+
+//////////// ROBOT SERVER
+/*socket.on('created', function (room){
   // Aqui entra el iniciador de la conversacion ei robot
   //console.log('socket.on created');
   //isInitiator = true;
@@ -244,7 +265,7 @@ socket.on('message', function (message){
     handleRemoteHangup();
   }
 });
-
+*/
 
 ////////////////////////////////////////////////
 

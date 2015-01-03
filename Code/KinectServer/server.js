@@ -1,13 +1,59 @@
+var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var express = require('express');
 
-var addon = require('bindings')('addon');
-var Kinect_obj = new addon.Server(10);
+var app = express();
+
+var privateKey = fs.readFileSync('fakekeys/privatekey.pem').toString();
+var certificate = fs.readFileSync('fakekeys/certificate.pem').toString();
 
 
 
-setInterval(function readGesture(){
-var val = Kinect_obj.getGesture();
-if(val != -9){
-	console.log(val);
-}
-},100);
 
+///// START SOCKET SERVER
+var server = app.listen(7000);//https.createServer({key: privateKey, cert: certificate}, app).listen(7000);
+
+
+console.log('S2 running on http://localhost:7000');
+
+var io = require('socket.io').listen(server);
+
+
+
+io.sockets.on('connection', function (socket){
+
+	function log(){
+		var array = [">>> Mensaje desde el servidor: "];
+	  for (var i = 0; i < arguments.length; i++) {
+	  	array.push(arguments[i]);
+	  }
+	    socket.emit('log', array);
+	}
+	
+	socket.on('create or join', function (room) {
+		
+		console.log('create or join');
+		io.sockets.in(room).emit('join', room); //esta accediendo al grupo
+		socket.join(room); 
+		socket.emit('joined', room); // se ha unido al grupo
+		
+		socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
+		socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
+		
+		socket.emit('gesture', -11);
+		///// START KINECT SERVER
+		var addon = require('bindings')('addon');
+		var Kinect_obj = new addon.Server(10);
+
+		setInterval(function readGesture(){
+		var val = Kinect_obj.getGesture();
+		if(val != -9){
+			console.log(val);
+			socket.emit('gesture', val);
+		}
+		},100);
+
+
+	});
+});
