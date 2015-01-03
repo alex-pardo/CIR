@@ -212,10 +212,11 @@ void CSkeletonBasics::sendGesture(){
 			break;
 		}
 
-	iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
-	if ( iResult > 0 ){
-		iResult = send( ConnectSocket, msg, (int)strlen(msg), 0 );
-	}
+	//iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
+	//if ( iResult > 0 ){
+	iResult = send( ConnectSocket, msg, (int)strlen(msg), 0 );
+	fprintf(stdout, "Gesture sent\n");
+	//}
 
 }
 
@@ -656,9 +657,13 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
 		} else {
 			movement = NONE;
 		}
-
 		last_gesture_detected = movement;
-		sendGesture();
+		
+		if(movement != NONE)
+			sendGesture();
+		
+		
+		
 		////////////////////////////////////////////////////////////////
 		switch (movement)
 		{

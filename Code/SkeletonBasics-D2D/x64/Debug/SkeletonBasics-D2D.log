@@ -1,4 +1,4 @@
-﻿Build started 28/12/2014 18:52:07.
+﻿Build started 03/01/2015 16:02:03.
      1>Project "C:\Users\alexpardo\CIR_proj\Code\SkeletonBasics-D2D\SkeletonBasics-D2D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Users\alexpardo\CIR_proj\Code\SkeletonBasics-D2D\libs" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TP /errorReport:prompt SkeletonBasics.cpp
@@ -13,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.89
+Time Elapsed 00:00:03.34

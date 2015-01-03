@@ -168,7 +168,7 @@ int Server::getLastGesture(){
 	int intVariable = 100;
 	char* charVariable = (char*)(&intVariable);
 
-	send(ClientSocket, charVariable, sizeof(charVariable), 0);
+	//send(ClientSocket, charVariable, sizeof(charVariable), 0);
 	
 	if (iSendResult == SOCKET_ERROR) {
 		printf("send failed with error: %d\n", WSAGetLastError());
