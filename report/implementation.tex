@@ -16,14 +16,19 @@ Since stop the robot abruptly might scare or disturb the people around we decide
 For the \emph{Gesture Robot Control} we use a Kinect camera setted in the teleoperator side. It has two main phases, \emph{depth image processing} and \emph{gesture recognition}.\\
 
 \begin{itemize}
-	\item \textbf{Depth Image Processing}: We use OpenNI sdk to extract the skeleton of the teleoperator. OpenNI skeleton tracking algorithm is not easy to find, however the Microsoft approach is to use a Random Forest classifier trained using a labelled dataset of depth images. 
+	\item \textbf{Depth Image Processing}: We use OpenNI sdk to extract the skeleton of the teleoperator. OpenNI skeleton tracking algorithm is not easy to find, however the Microsoft approach is to use a Random Forest classifier trained using a labelled dataset of depth images. \\
 	
 	The result is an efficient algorithm that works in real time.
 	
-	\item \textbf{Gesture Recognition}: We use a gesture recognition system based on right hand positions in the space (3D) and its variation over time, i.e. three axis and its two possible directions, which do 6 different gestures. The movement is controlled by an empirically tested threshold.
+	\item \textbf{Gesture Recognition}: We use a gesture recognition system based on right hand positions in the space (3D) and its variation over time, i.e. three axis and its two possible directions, which do 6 different gestures. The movement is controlled by an empirically tested threshold.\\
 		
 	Moving the hand in the depth axis will command to the robot to move forward or backward depending on the direction of the hand's movement, moving the hand in the horizontal axis will send to the robot the order of turning right or left and finally the vertical axis will send an stop signal to the robot.
 	
 \end{itemize}
 
-\subsection{Communication Operator-Robot and Robot-Operator}
+\subsection{Communication}
+
+The \textbf{Anti-collision system} code runs on the server side and is able to stop the MASHI when an obstacle is close to the robot autonomously. Also blocking the user to move the MASHI forward if the obstacle still in the path.\\
+
+The \textbf{Gestural Control} code runs in the user's machine, able to track the skeleton and to send the commands to the robot server via a websocket connection.
+
