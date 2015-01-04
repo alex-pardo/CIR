@@ -2,4 +2,13 @@
 \label{sec:implementation}
 
 \subsection{Collision Avoidance}
+We use the depth map given by the RGB-D camera from the robot to analyse whether there is collision risk. We use a sliding window to compute the average distance to each patch and get the approximate distance to the closest visible object to the robot. By setting two thresholds the robot sends a warning to the teleoperator, when there is an object close enough, or stops, when there is an object too close. Once the robot is freeze because of an obstacle the teleoperator can still move backwards (at its own risk) or turn around. \\
+
+
+In order to tackle the Freezing Robot problem we use a time window to store the closest distance and check if it disappears in time, i.e. if the sum of the distances in that window frame is larger that certain threshold then we consider that the object is a danger, otherwise the obstacle is just passing by and so not a real danger.\\
+
+Since stop the robot abruptly might scare or disturb the people around we decided to reduce the speed of the robot once it enters to a warning zone inverse proportionally to the closest distance until the stop zone. 
+
 \subsection{Gesture Control}
+
+\subsection{Communication Operator-Robot and Robot-Operator}
