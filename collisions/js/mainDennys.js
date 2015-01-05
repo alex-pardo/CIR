@@ -158,12 +158,15 @@ setInterval(function () {
 
 
 var socket = io.connect();
+var gesture = io.connect('http://localhost:7000');
 var room = 'robotRoom';
 if (room !== '') {
   //console.log('Creando or join room', room);
   socket.emit('create or join', room);
+  gesture.emit('create or join', room);
 }
 
+//////////// ROBOT SERVER
 socket.on('created', function (room){
   // Aqui entra el iniciador de la conversacion ei robot
   //console.log('socket.on created');
@@ -256,6 +259,41 @@ socket.on('message', function (message){
   } else if (message === 'bye' && isStarted) {
     handleRemoteHangup();
   }
+});
+
+///////////// GESTURE SERVER
+gesture.on('join', function (room){
+  // aqui entra el robot
+  console.log(user + ' join ' + room + ' on Gesture Server!');
+});
+
+gesture.on('joined', function (room){
+  //aqui entra dennys
+    console.log(user + ' joined ' + room+' on Gesture Server');
+
+});
+
+gesture.on('gesture', function (message){
+	console.log('Gesture Server says:'+ message);
+	switch(message){
+		case 1: //LEFT
+			sendDataLeft();
+			break;
+		case 2: //RIGHT
+			sendDataRight();
+			break;
+		case 3: //FORWARD
+			sendDataForward();
+			break;
+		case 4: //BACKWARD
+			sendDataReverse();
+			break;
+		case 5: //STOP
+			sendDataStop();
+			break;
+		default:
+			break;
+	}
 });
 
 
