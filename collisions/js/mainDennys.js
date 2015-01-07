@@ -158,7 +158,7 @@ setInterval(function () {
 
 
 var socket = io.connect();
-var gesture = io.connect('http://localhost:7000');
+var gesture = io.connect('http://192.168.0.102:7000');
 var room = 'robotRoom';
 if (room !== '') {
   //console.log('Creando or join room', room);
