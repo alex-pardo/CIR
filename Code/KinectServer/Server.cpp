@@ -20,10 +20,10 @@ int recvbuflen = DEFAULT_BUFLEN;
 #define right "right"
 #define stop "stop"
 
-#define FWD 1
-#define BWD 2
-#define LEFT 3
-#define RIGHT 4
+#define LEFT 1
+#define RIGHT 2
+#define FWD 3
+#define BWD 4
 #define STOP 5
 
 
@@ -168,31 +168,18 @@ int Server::getLastGesture(){
 	int intVariable = 100;
 	char* charVariable = (char*)(&intVariable);
 
-	//send(ClientSocket, charVariable, sizeof(charVariable), 0);
-	
-	if (iSendResult == SOCKET_ERROR) {
-		printf("send failed with error: %d\n", WSAGetLastError());
-		closesocket(ClientSocket);
-		WSACleanup();
-		return -10;
+	iResult = recv(ClientSocket, recvbuf, recvbuflen, 0);
+	if(iResult > 0){
+		recvbuf[iResult] = '\0';
+		if(strcmpi(recvbuf, fwd) == 0){		return FWD; }
+		else if(strcmpi(recvbuf, bwd) == 0){return BWD;}
+		else if(strcmpi(recvbuf, left) == 0){return LEFT;}
+		else if(strcmpi(recvbuf, right) == 0){return RIGHT;}
+		else if(strcmpi(recvbuf, stop) == 0){return STOP;}
 	} else{
-		iResult = recv(ClientSocket, recvbuf, recvbuflen, 0);
-		if(iResult > 0){
-			recvbuf[iResult] = '\0';
-			if(strcmpi(recvbuf, fwd) == 0){		return FWD; }
-			else if(strcmpi(recvbuf, bwd) == 0){return BWD;}
-			else if(strcmpi(recvbuf, left) == 0){return LEFT;}
-			else if(strcmpi(recvbuf, right) == 0){return RIGHT;}
-			else if(strcmpi(recvbuf, stop) == 0){return STOP;}
-		} else{
-			return -9;
-		}
+		return -9;
 	}
-	return -11;
-
-
-
-
+	
 }
 
 

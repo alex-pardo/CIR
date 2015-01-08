@@ -189,7 +189,7 @@ int CSkeletonBasics::initClient(){
 
 void CSkeletonBasics::sendGesture(){
 
-	char * msg;
+	char * msg = "none";
 	switch (last_gesture_detected)
 		{
 		case LEFT:

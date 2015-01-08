@@ -4,22 +4,28 @@ var fs = require('fs');
 var express = require('express');
 
 var app = express();
-
+/*
 var privateKey = fs.readFileSync('fakekeys/privatekey.pem').toString();
 var certificate = fs.readFileSync('fakekeys/certificate.pem').toString();
-
+*/
 
 
 
 ///// START SOCKET SERVER
-var server = app.listen(7000);//https.createServer({key: privateKey, cert: certificate}, app).listen(7000);
+var server = app.listen(1234);
 
 
-console.log('S2 running on http://localhost:7000');
+
+
+//var server  = https.createServer({key: privateKey, cert: certificate}, app).listen(7000);
+
+
+console.log('S2 running on http://localhost:1234');
 
 var io = require('socket.io').listen(server);
 
-
+io.set('heartbeat interval', 500);
+io.set('heartbeat timeout', 1100);
 
 io.sockets.on('connection', function (socket){
 
@@ -41,7 +47,7 @@ io.sockets.on('connection', function (socket){
 		socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
 		socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
 		
-		socket.emit('gesture', -11);
+		//socket.emit('gesture', -11);
 		///// START KINECT SERVER
 		var addon = require('bindings')('addon');
 		var Kinect_obj = new addon.Server(10);
@@ -52,8 +58,9 @@ io.sockets.on('connection', function (socket){
 			console.log(val);
 			socket.emit('gesture', val);
 		}
-		},100);
+		},300);
 
 
 	});
 });
+
