@@ -28,7 +28,20 @@ For the \emph{Gesture Robot Control} we use a Kinect camera setted in the teleop
 
 \subsection{Communication}
 
-The \textbf{Anti-collision system} code runs on the server side and is able to stop the MASHI when an obstacle is close to the robot autonomously. Also blocking the user to move the MASHI forward if the obstacle still in the path. It also controls the speed of the robot as described before.\\
 
-The \textbf{Gestural Control} code runs in the user's machine, able to track the skeleton and to send the commands to the robot server via a websocket connection.
+All the connections on the system are shown in Figure \ref{fig:com}, boxes in white represent those parts that are new. Next we detail how we added the two new modules:
+\begin{itemize}
+\item The \textbf{Anti-collision system} code runs on the MASHI side since it should be able to stop it even if the communication channel is broken. This part of the system runs on the Robot controller (which is a Server). The distance obtained is broadcasted over the network in order to allow everyone to know it. This part of the system also controls the speed reduction when approaching an obstacle as described before.
 
+\item On the other side, we have the \textbf{Gestural Control} which runs on the teleoperator machine. The application uses Openni and Nite libraries so it must be written in C++ while all the system is implemented in node-js. In order to enable the communication between languages, we defined a Client-Server protocol inside Kinect Server, which is getting data from the gesture recognition system (Gestures Camera in the figure) and sending it to the teleoperator application. Then, this will send the proper commands to the Server. The C++ - node js transition is made inside Kinect Server which is implemented using C++ but binded on node js using node-gyp (i.e. C++ code is executed from node js)
+
+\end{itemize}
+
+This complex structure allows us to maintain as much as possible the original communication since we are adding the newest modules (Gesture recognition) at the client side, making it transparent for the server placed on the robot. The collision avoidance system is set on the robot server because it does not require any communication with the clients.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8 \textwidth]{images/communication.png}
+\caption{System communication diagram}
+\label{fig:com}
+\end{figure}
