@@ -614,7 +614,7 @@ void CSkeletonBasics::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWid
 		int movement;
     
 		diffx = last_x - x;
-		diffy = last_y - y;
+		diffy = last_y - y;//*1.1
 		diffz = last_z - z;
 
 		//fprintf(stdout, "%f, %f, %f\n", x,y,z);

@@ -1,0 +1,16 @@
+\section{Analysis}
+\label{sec:analysis}
+
+In this section we will analyse each one of the two main objectives of this project in order to explain the main problems we would find and the possible solutions to them.
+
+\subsection{Gesture control}
+
+After testing the MASHI robot by using the web interface already developed we realized that controlling it is not an easy task since we are not only able to move the robot itself but also the head, so we have nine different buttons to press (five for motion and four for head movement). The team in charge of developing MASHI plans to add two arms two the robot, so the number of keys would be increased.
+For this reason we decided to move some of the controls to a more intuitive gesture-based system. For doing so we would use RGB-D images in which we are able to get the skeleton of the teleoperator in order to easily recognize gestures.
+
+Instead of moving all the controls, we decided to first implement the motion gestures and keep the head movement in the keyboard. This means the teleoperator would use the keyboard while performing gestures. The problem is that the system should be able to track the skeleton of a seated person. Microsoft Kinect SDK allows to track a person even if he/she is seated.
+
+
+\subsection{Collision avoidance}
+
+Also in the test we performed with the robot, we discovered that the communication between teleoperator and MASHI is not perfect and some orders are missed over the channel. We have to take into account that every wireless communication system is affected by interferences and errors that causes missing packets. So, if the robot is about to collide with an obstacle we could miss it because a camera problem (we are not able to see it) or because the \textit{STOP} order is not received by the robot. In order to solve this conflicting situations we decided to add to the robot the ability of detecting obstacles in front of it. We would use a RGB-D camera in order to track distances and be able to tell the robot that we are approaching something that would block the trajectory.
